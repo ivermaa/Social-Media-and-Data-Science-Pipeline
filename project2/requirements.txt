@@ -1,0 +1,7 @@
+psycopg2-binary==2.9.9
+requests==2.32.3
+flask
+pyfaktory
+python-dotenv
+matplotlib
+plotly

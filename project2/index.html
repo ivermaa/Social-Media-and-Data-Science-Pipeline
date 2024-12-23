@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Analysis Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar collapsed" id="sidebar">
+        <button id="menu-btn">☰ Menu</button>
+        <ul>
+            <li><a href="/">Dashboard</a></li>
+            <li><a href="/sentiment">Sentiment Analysis</a></li>
+            <li><a href="/predictive">Predictive Analysis</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Dashboard Section -->
+        <section id="dashboard">
+            <h1>Dashboard</h1>
+            <p>Select Year and Month to view real-time data.</p>
+
+            <div>
+                <label for="year">Year:</label>
+                <select id="year">
+                    <option value="2024">2024</option>
+                </select>
+
+                <label for="month">Month:</label>
+                <select id="month">
+                    <option value="">All</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+
+                <button id="filter-btn">Apply Filters</button>
+            </div>
+
+            <!-- Real-Time Data Visualization -->
+            <div id="real-time-chart" style="height: 500px; width: 100%;"></div>
+        </section>
+        <section id="cumulative-dashboard">
+            <h2>Cumulative Posts Over Time</h2>
+            <label for="subreddit-select">Select Subreddit or Board:</label>
+            <select id="subreddit-select">
+                <option value="t5_2cneq">t5_2cneq</option>
+                <option value="t5_2rbzr">t5_2rbzr</option>
+                <option value="t5_2fwo">t5_2fwo</option>
+                <option value="t5_2sptq">t5_2sptq</option>
+                <option value="t5_2qh16">t5_2qh16</option>
+                <option value="pol">pol (4chan)</option>
+                <option value="all">All</option>
+            </select>
+            <button id="cumulative-filter-btn">Apply</button>
+            <div id="cumulative-chart" style="height: 500px; width: 100%;"></div>
+        </section>
+        
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Social Media Analysis Dashboard. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
