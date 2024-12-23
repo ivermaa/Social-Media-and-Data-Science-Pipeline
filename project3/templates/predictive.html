@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictive Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar collapsed" id="sidebar">
+        <button id="menu-btn">Menu</button>
+        <ul>
+            <li><a href="/">Dashboard</a></li>
+            <li><a href="/sentiment">Sentiment Analysis</a></li>
+            <li><a href="/predictive">Predictive Analysis</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <section id="predictive-analysis">
+            <h1>Predictive Analysis</h1>
+            <p>Forecasting future trends in subreddits.</p>
+            <div id="predictive-graph"></div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Social Media Analysis Dashboard. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
